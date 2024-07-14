@@ -1,5 +1,131 @@
-<html>
-  <body>
-    <h1>你好，世界！</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musiclord.github.io</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>歡迎</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#projects">專案</a></li>
+            <li><a href="#contact">聯絡</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home" class="card">
+            <h2>首頁</h2>
+            <p>這是一個網頁專為 GitHub Pages 設計。</p>
+        </section>
+        
+        <section id="about" class="card">
+            <h2>關於我</h2>
+            <p>我是廢物^^!</p>
+        </section>
+        
+        <section id="projects" class="card">
+            <h2>我的專案</h2>
+            <ul>
+                <li>專案 1</li>
+                <li>專案 2</li>
+                <li>專案 3</li>
+            </ul>
+        </section>
+        
+        <section id="contact" class="card">
+            <h2>聯絡我</h2>
+            <p>電子郵件：example@email.com</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 我的網頁。保留所有權利。</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    targetElement.scrollIntoView({behavior: 'smooth'});
+                });
+            });
+        });
+    </script>
+</body>
 </html>
